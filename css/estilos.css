@@ -1,0 +1,584 @@
+
+/* =================================
+   DULCE TENTACIÓN
+   ESTILOS GENERALES
+================================= */
+
+/* CONFIGURACIÓN GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fffdf5;
+    color: #263b29;
+}
+
+/* COLORES PRINCIPALES */
+
+:root {
+    --verde-oscuro: #174d2b;
+    --verde: #438b45;
+    --amarillo: #f4d94e;
+    --crema: #fffdf5;
+    --blanco: #ffffff;
+    --texto: #354638;
+}
+
+/* ENCABEZADO */
+
+header {
+    width: 100%;
+    background-color: var(--blanco);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LOGOTIPO */
+
+.logo img {
+    height: 65px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* MENÚ DE NAVEGACIÓN */
+
+.menu-navegacion {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.menu-navegacion a {
+    text-decoration: none;
+    color: var(--texto);
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.menu-navegacion a {
+    position: relative;
+    text-decoration: none;
+    color: var(--texto);
+    font-size: 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.menu-navegacion a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background-color: var(--verde);
+    transition: width 0.3s ease;
+}
+
+.menu-navegacion a:hover {
+    color: var(--verde);
+}
+
+.menu-navegacion a:hover::after {
+    width: 100%;
+}
+
+/* PORTADA */
+
+.portada {
+    min-height: 520px;
+
+    background-image:
+        linear-gradient(
+            rgba(23, 77, 43, 0.65),
+            rgba(67, 139, 69, 0.65)
+        ),
+        url("../imagenes/fon3.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.contenido-portada {
+    max-width: 750px;
+    color: var(--blanco);
+}
+
+.contenido-portada h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 3px 8px rgba(0, 0, 0, 0.45);
+}
+
+.contenido-portada p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* BOTÓN DEL MENÚ */
+
+.boton-menu {
+    display: inline-block;
+    padding: 15px 35px;
+
+    background-color: var(--amarillo);
+    color: var(--verde-oscuro);
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    border: 2px solid var(--amarillo);
+    border-radius: 35px;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+    transition: all 0.3s ease;
+}
+
+.boton-menu:hover {
+    background-color: var(--blanco);
+    border-color: var(--blanco);
+    color: var(--verde-oscuro);
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =================================
+   SECCIÓN DEL MENÚ
+================================= */
+
+.seccion-menu {
+    padding: 80px 40px;
+    text-align: center;
+    background-color: var(--crema);
+}
+
+.seccion-menu h2 {
+    font-size: 36px;
+    color: var(--verde-oscuro);
+    margin-bottom: 15px;
+}
+
+.descripcion-seccion {
+    color: #777;
+    font-size: 17px;
+    margin-bottom: 45px;
+}
+
+/* CONTENEDOR DE PRODUCTOS */
+
+.contenedor-productos {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* TARJETAS */
+
+.tarjeta-producto {
+    background-color: var(--blanco);
+    border-radius: 20px;
+    overflow: hidden;
+
+    border: 1px solid rgba(67, 139, 69, 0.25);
+
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.09);
+
+    transition: all 0.35s ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.13);
+}
+
+/* IMAGEN DEL PRODUCTO */
+
+.tarjeta-producto img {
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.tarjeta-producto:hover img {
+    transform: scale(1.05);
+}
+
+/* INFORMACIÓN */
+
+.informacion-producto {
+    padding: 20px;
+    text-align: left;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.informacion-producto h3 {
+    color: var(--verde-oscuro);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.tarjeta-producto:hover .informacion-producto h3 {
+    color: var(--verde);
+}
+
+.informacion-producto p {
+    color: #5f6b60;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* PRECIO */
+
+.precio-producto {
+    color: var(--verde-oscuro);
+    font-size: 23px;
+    font-weight: 800;
+    margin-top: 10px;
+    letter-spacing: 0.3px;
+}
+
+
+/* =================================
+   DISEÑO RESPONSIVE
+================================= */
+
+/* TABLETS */
+
+@media (max-width: 900px) {
+
+    .contenedor-galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenedor-productos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .contenido-portada h1 {
+        font-size: 38px;
+    }
+
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+
+        .contenedor-galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .seccion-galeria {
+        padding: 55px 20px;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu-navegacion {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo h2 {
+        font-size: 23px;
+    }
+
+    .portada {
+        min-height: 420px;
+    }
+
+    .contenido-portada h1 {
+        font-size: 32px;
+    }
+
+    .contenido-portada p {
+        font-size: 16px;
+    }
+
+    .seccion-menu {
+        padding: 55px 20px;
+    }
+
+    .contenedor-productos {
+        grid-template-columns: 1fr;
+    }
+
+    .informacion-contacto {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .contacto-persona {
+        padding: 25px 15px;
+    }
+
+}
+
+/* =================================
+   SECCIÓN GALERÍA
+================================= */
+
+.seccion-galeria {
+    padding: 80px 40px;
+    text-align: center;
+    background-color: var(--blanco);
+}
+
+.seccion-galeria h2 {
+    font-size: 36px;
+    color: var(--verde-oscuro);
+    margin-bottom: 40px;
+}
+
+.contenedor-galeria {
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* IMÁGENES DE LA GALERÍA */
+
+.imagen-galeria {
+    width: 100%;
+    height: 280px;
+
+    object-fit: cover;
+    display: block;
+
+    border-radius: 18px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.imagen-galeria:hover {
+    transform: scale(1.04);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.16);
+}
+
+/* =================================
+   SECCIÓN CONTACTO
+================================= */
+
+.seccion-contacto {
+    padding: 80px 40px;
+    text-align: center;
+    background-color: var(--crema);
+}
+
+.seccion-contacto h2 {
+    font-size: 36px;
+    color: var(--verde-oscuro);
+    margin-bottom: 20px;
+}
+
+.seccion-contacto > p {
+    color: #777;
+    font-size: 17px;
+    margin-bottom: 35px;
+    
+}
+
+.informacion-contacto {
+    max-width: 950px;
+    margin: auto;
+    padding: 35px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+
+    background-color: var(--blanco);
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+/* CONTACTOS INDIVIDUALES */
+
+.contacto-persona {
+    padding: 30px 20px;
+    margin-bottom: 0;
+
+    background-color: var(--crema);
+    border-radius: 15px;
+}
+
+.contacto-persona h3 {
+    color: var(--verde-oscuro);
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.contacto-persona p {
+    color: var(--texto);
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.contacto-persona a {
+    color: var(--verde);
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contacto-persona a:hover {
+    color: var(--verde-oscuro);
+}
+
+/* =================================
+   PIE DE PÁGINA
+================================= */
+
+footer {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+
+    text-align: center;
+    padding: 25px 20px;
+
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    line-height: 1.6;
+}
+/* =================================
+   PRECIOS Y ADICIONALES
+================================= */
+
+.precios-producto {
+    margin-top: 15px;
+}
+
+.opcion-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 9px 12px;
+    margin-bottom: 8px;
+
+    background-color: var(--crema);
+    border-radius: 8px;
+}
+
+.opcion-precio span {
+    color: var(--texto);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.opcion-precio strong {
+    color: var(--verde-oscuro);
+    font-size: 17px;
+}
+
+/* ADICIONALES DE LOS PRODUCTOS */
+
+.adicionales-producto {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(67, 139, 69, 0.20);
+}
+
+.adicionales-producto h4 {
+    color: var(--verde-oscuro);
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.opcion-adicional {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 8px 12px;
+    margin-bottom: 7px;
+
+    background-color: #f3f8ef;
+    border-radius: 8px;
+}
+
+.opcion-adicional span {
+    color: var(--texto);
+    font-size: 14px;
+}
+
+.opcion-adicional strong {
+    color: var(--verde);
+    font-size: 15px;
+}
